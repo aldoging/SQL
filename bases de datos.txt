@@ -1,0 +1,66 @@
+CREATE TABLE IF NOT EXISTS Students 
+(
+  ID INT NOT NULL AUTO_INCREMENT,
+  
+   Name VARCHAR(45) NOT NULL,
+  
+   Marks INT NOT NULL,
+  
+   PRIMARY KEY (ID)
+);
+
+CREATE TABLE IF NOT EXISTS Grades 
+(
+  ID INT NOT NULL AUTO_INCREMENT,
+  
+   Grade INT NOT NULL,
+  
+   Min_Mark INT NOT NULL,
+  
+   Max_Mark INT NOT NULL,
+  
+   PRIMARY KEY (ID)
+);
+
+INSERT INTO Grades (ID, Grade, Min_Mark, Max_Mark) VALUES ('1', '1', '0', '9');
+
+INSERT INTO Grades (ID, Grade, Min_Mark, Max_Mark) VALUES ('2', '2', '10', '19');
+
+INSERT INTO Grades (ID, Grade, Min_Mark, Max_Mark) VALUES ('3', '3', '20', '29');
+
+INSERT INTO Grades (ID, Grade, Min_Mark, Max_Mark) VALUES ('4', '4', '30', '39');
+
+INSERT INTO Grades (ID, Grade, Min_Mark, Max_Mark) VALUES ('5', '5', '40', '49');
+
+INSERT INTO Grades (ID, Grade, Min_Mark, Max_Mark) VALUES ('6', '6', '50', '59');
+
+INSERT INTO Grades (ID, Grade, Min_Mark, Max_Mark) VALUES ('7', '7', '60', '69');
+
+INSERT INTO Grades (ID, Grade, Min_Mark, Max_Mark) VALUES ('8', '8', '70', '79');
+
+INSERT INTO Grades (ID, Grade, Min_Mark, Max_Mark) VALUES ('9', '9', '80', '89');
+
+INSERT INTO Grades (ID, Grade, Min_Mark, Max_Mark) VALUES ('10', '10', '90', '100');
+
+INSERT INTO Students (ID, Name, Marks) VALUES ('1', 'Julia', '88');
+INSERT INTO Students (ID, Name, Marks) VALUES ('2', 'Samantha', '68');
+
+INSERT INTO Students (ID, Name, Marks) VALUES ('3', 'Maria', '99');
+
+INSERT INTO Students (ID, Name, Marks) VALUES ('4', 'Scarlet', '78');
+
+INSERT INTO Students (ID, Name, Marks) VALUES ('5', 'Ashley', '63');
+
+INSERT INTO Students (ID, Name, Marks) VALUES ('6', 'Jane', '81');
+
+select Name, Grade, Marks 
+
+from Students, Grades
+
+where Marks >= Min_Mark
+
+and Marks <= Max_Mark
+ 
+and Marks >= 70
+
+ORDER BY Grade DESC, Name ASC;
